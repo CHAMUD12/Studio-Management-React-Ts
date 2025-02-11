@@ -64,9 +64,9 @@ function Customer() {
     resetForm()
   }
 
-  const handleDelete = (email: string) => {
+  const handleDelete = (id: string) => {
     if (window.confirm("Are you sure you want to delete this customer?")) {
-      dispatch(deleteCustomer(email));
+      dispatch(deleteCustomer(id));
     }
   }
 
@@ -173,7 +173,7 @@ function Customer() {
               <td className="border px-4 py-2">{customer.Mobile}</td>
               <td className="border px-4 py-2 text-center">
                 <button
-                  onClick={() => handleDelete(customer.Email)}
+                  onClick={() => handleDelete(customer.CustomerId)}
                   className="bg-red-500 text-white p-2 rounded-lg"
                 >
                   <Trash2 />
