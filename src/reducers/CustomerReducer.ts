@@ -90,13 +90,9 @@ const customerSlice = createSlice({
                 console.log("Update customer pending", action.payload)
             })
             .addCase(updateCustomer.fulfilled, (state, action) => {
-                const customer = state.find((customer: Customers) => customer.Email === action.payload.Email);
-                if(customer){
-                    customer.Name = action.payload.Name;
-                    customer.Address = action.payload.Address;
-                    customer.Mobile = action.payload.Mobile;
-                }
-                console.log("Update customer fulfilled", action.payload)
+                return state.map((customer: Customers) =>
+                    customer.CustomerId === action.payload.CustomerId ? { ...customer, ...action.payload } : customer
+                );
             })
             .addCase(updateCustomer.rejected, (state, action) => {
                 console.error('Update customer rejected');
@@ -106,8 +102,7 @@ const customerSlice = createSlice({
                 console.log("Delete customer pending")
             })
             .addCase(deleteCustomer.fulfilled, (state, action) => {
-                return state = state.filter((customer: Customers) => customer.Email !== action.payload.Email);
-                console.log("Delete customer fulfilled")
+                return state.filter((customer: Customers) => customer.CustomerId !== action.meta.arg);
             })
             .addCase(deleteCustomer.rejected, (state, action) => {
                 console.error('Delete customer rejected');
