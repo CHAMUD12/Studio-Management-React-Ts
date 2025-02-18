@@ -56,11 +56,11 @@ export function Menu() {
           </li>
           <li>
             <Link
-              to="item"
+              to="instructor"
               className="flex items-center space-x-4 p-2 rounded-md transition-colors hover:bg-blue-700 hover:text-gray-200"
             >
               <Package className="w-6 h-6" />
-              {isSidebarOpen && <span>Item</span>}
+              {isSidebarOpen && <span>Instructor</span>}
             </Link>
           </li>
           <li>

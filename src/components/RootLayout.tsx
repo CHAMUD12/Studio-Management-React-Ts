@@ -8,6 +8,7 @@ export function RootLayout() {
   const routeTitles: any = {
     "/": "Home",
     "/customer": "Customers Management",
+    "/instructor": "Instructors Management",
   }
 
   const title = routeTitles[location?.pathname] || "Shop"
