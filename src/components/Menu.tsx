@@ -41,7 +41,7 @@ export function Menu() {
                   to=""
                   className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
               >
-                <Home className="w-6 h-6" />
+                <Home className="w-6 h-6"/>
                 {isSidebarOpen && <span>Dashboard</span>}
               </Link>
             </li>
@@ -50,7 +50,7 @@ export function Menu() {
                   to="customer"
                   className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
               >
-                <Users className="w-6 h-6" />
+                <Users className="w-6 h-6"/>
                 {isSidebarOpen && <span>Customer</span>}
               </Link>
             </li>
@@ -59,8 +59,17 @@ export function Menu() {
                   to="instructor"
                   className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
               >
-                <Package className="w-6 h-6" />
+                <Package className="w-6 h-6"/>
                 {isSidebarOpen && <span>Instructor</span>}
+              </Link>
+            </li>
+            <li>
+              <Link
+                  to="rentalItem"
+                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
+              >
+                <Users className="w-6 h-6"/>
+                {isSidebarOpen && <span>Rental Item</span>}
               </Link>
             </li>
             <li>
@@ -68,7 +77,7 @@ export function Menu() {
                   to="place-order"
                   className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
               >
-                <ShoppingCart className="w-6 h-6" />
+                <ShoppingCart className="w-6 h-6"/>
                 {isSidebarOpen && <span>Place Order</span>}
               </Link>
             </li>

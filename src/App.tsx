@@ -5,6 +5,7 @@ import {RootLayout} from "./components/RootLayout.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import Customer from "./pages/Customer.tsx";
 import Instructor from "./pages/Instructor.tsx";
+import RentalItem from "./pages/RentalItem.tsx";
 
 function App() {
     const routes = createBrowserRouter([
@@ -15,6 +16,8 @@ function App() {
                 { path: "", element: <Dashboard /> },
                 { path: "/customer", element: <Customer /> },
                 { path: "/instructor", element: <Instructor /> },
+                { path: "/rentalItem", element: <RentalItem /> },
+
                 // { path: "/place-order", element: <PlaceOrder /> }
             ]
         }
