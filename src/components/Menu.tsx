@@ -72,6 +72,17 @@ export function Menu() {
                 {isSidebarOpen && <span>Rental Item</span>}
               </Link>
             </li>
+
+            <li>
+              <Link
+                  to="eventPackage"
+                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
+              >
+                <Users className="w-6 h-6"/>
+                {isSidebarOpen && <span>Event Package</span>}
+              </Link>
+            </li>
+
             <li>
               <Link
                   to="place-order"

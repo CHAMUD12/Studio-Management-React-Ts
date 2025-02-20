@@ -10,6 +10,8 @@ export function RootLayout() {
     "/customer": "Customers Management",
     "/instructor": "Instructor Management",
       "/rentalItem": "RentalItem Management",
+      "/eventPackage": "EventPackage Management",
+
   }
 
   const title = routeTitles[location?.pathname] || "Shop"
