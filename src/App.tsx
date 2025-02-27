@@ -7,6 +7,7 @@ import Customer from "./pages/Customer.tsx";
 import Instructor from "./pages/Instructor.tsx";
 import RentalItem from "./pages/RentalItem.tsx";
 import EventPackage from "./pages/EventPackage.tsx";
+import Booking from "./pages/Booking.tsx";
 
 function App() {
     const routes = createBrowserRouter([
@@ -19,6 +20,7 @@ function App() {
                 { path: "/instructor", element: <Instructor /> },
                 { path: "/rentalItem", element: <RentalItem /> },
                 { path: "/eventPackage", element: <EventPackage /> },
+                { path: "/booking", element: <Booking /> },
 
 
                 // { path: "/place-order", element: <PlaceOrder /> }

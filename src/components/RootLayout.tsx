@@ -11,6 +11,7 @@ export function RootLayout() {
     "/instructor": "Instructor Management",
       "/rentalItem": "RentalItem Management",
       "/eventPackage": "EventPackage Management",
+    "/booking": "Booking Management",
 
   }
 
