@@ -4,9 +4,10 @@ import {
   Home,
   Users,
   Package,
-  ShoppingCart,
+  ShoppingCart, Bookmark, User, Camera, Calendar,
 } from "react-feather";
 import { Link } from "react-router";
+import {Boxes} from "lucide-react";
 
 export function Menu() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -17,7 +18,7 @@ export function Menu() {
 
   return (
       <div
-          className={`bg-gradient-to-r from-gray-100 to-gray-300 text-white shadow-xl ${
+          className={`bg-gradient-to-r from-gray-400 to-gray-600 text-white shadow-xl ${
               isSidebarOpen ? "w-64" : "w-20"
           } transition-all duration-300 ease-in-out h-screen flex flex-col`}
       >
@@ -39,7 +40,7 @@ export function Menu() {
             <li>
               <Link
                   to=""
-                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
+                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-gray-400 to-gray-200 transition duration-300 hover:bg-white hover:text-black"
               >
                 <Home className="w-6 h-6"/>
                 {isSidebarOpen && <span>Dashboard</span>}
@@ -48,7 +49,7 @@ export function Menu() {
             <li>
               <Link
                   to="customer"
-                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
+                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-gray-400 to-gray-200 transition duration-300 hover:bg-white hover:text-black"
               >
                 <Users className="w-6 h-6"/>
                 {isSidebarOpen && <span>Customer</span>}
@@ -57,18 +58,18 @@ export function Menu() {
             <li>
               <Link
                   to="instructor"
-                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
+                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-gray-400 to-gray-200 transition duration-300 hover:bg-white hover:text-black"
               >
-                <Package className="w-6 h-6"/>
+                <User className="w-6 h-6"/>
                 {isSidebarOpen && <span>Instructor</span>}
               </Link>
             </li>
             <li>
               <Link
                   to="rentalItem"
-                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
+                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-gray-400 to-gray-200 transition duration-300 hover:bg-white hover:text-black"
               >
-                <Users className="w-6 h-6"/>
+                <Camera className="w-6 h-6"/>
                 {isSidebarOpen && <span>Rental Item</span>}
               </Link>
             </li>
@@ -76,9 +77,9 @@ export function Menu() {
             <li>
               <Link
                   to="eventPackage"
-                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
+                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-gray-400 to-gray-200 transition duration-300 hover:bg-white hover:text-black"
               >
-                <Users className="w-6 h-6"/>
+                <Boxes className="w-6 h-6"/>
                 {isSidebarOpen && <span>Event Package</span>}
               </Link>
             </li>
@@ -86,20 +87,20 @@ export function Menu() {
             <li>
               <Link
                   to="booking"
-                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
+                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-gray-400 to-gray-200 transition duration-300 hover:bg-white hover:text-black"
               >
-                <Users className="w-6 h-6"/>
+                <Calendar className="w-6 h-6"/>
                 {isSidebarOpen && <span>Booking</span>}
               </Link>
             </li>
 
             <li>
               <Link
-                  to="place-order"
-                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-blue-300 to-blue-200 transition duration-300 hover:bg-white hover:text-black"
+                  to="rental"
+                  className="flex items-center space-x-4 p-3 rounded-lg bg-gradient-to-r from-gray-400 to-gray-200 transition duration-300 hover:bg-white hover:text-black"
               >
                 <ShoppingCart className="w-6 h-6"/>
-                {isSidebarOpen && <span>Place Order</span>}
+                {isSidebarOpen && <span>Rental</span>}
               </Link>
             </li>
           </ul>

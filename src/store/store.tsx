@@ -4,8 +4,7 @@ import instructorReducer from "../reducers/InstructorReducer.ts";
 import rentalItemReducer from "../reducers/RentalItemReducer.ts";
 import eventPackageReducer from "../reducers/EventPackageReducer.ts";
 import bookingReducer from "../reducers/BookingReducer.ts";
-// import rentalItemReducer from "../reducers/RentalItemReducer.ts";
-// import itemReducer from "../reducers/ItemReducer.ts";
+import rentalReducer from "../reducers/RentalReducer.ts";
 
 export const store = configureStore({
     reducer :{
@@ -14,7 +13,7 @@ export const store = configureStore({
         rentalItem : rentalItemReducer,
         eventPackage : eventPackageReducer,
         booking : bookingReducer,
-        // item : itemReducer,
+        rental : rentalReducer,
     }
 })
 
