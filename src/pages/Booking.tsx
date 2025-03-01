@@ -7,7 +7,7 @@ import { getEventPackages } from "../reducers/EventPackageReducer";
 import {BookingDetails} from "../models/Booking.ts";
 import {Customers} from "../models/Customers.ts";
 import {EventPackages} from "../models/EventPackages.ts";
-
+import {Trash2} from "react-feather";
 
 const BookingComponent = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -77,16 +77,16 @@ const BookingComponent = () => {
     };
 
     return (
-        <div className="p-6 bg-gray-100">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-                <h2 className="text-2xl font-bold mb-4">Create New Booking</h2>
+        <div className="p-6 bg-gradient-to-r from-blue-100 to-blue-300">
+            <div className="bg-white p-6 rounded-xl shadow-xl mt-4">
+                <h2 className="text-2xl font-bold mb-4 text-blue-800">Create New Booking</h2>
 
-                <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-2 gap-6 mb-6">
                     <div className="space-y-4">
-                        <div>
-                            <label className="block text-sm font-medium mb-1">Customer</label>
+                        <div className="flex flex-col">
+                            <label className="text-black font-bold text-sm mb-1">Customer</label>
                             <select
-                                className="w-full p-2 border rounded"
+                                className="p-2 bg-gray-200 rounded-lg shadow-sm focus:outline-none"
                                 value={selectedCustomerId}
                                 onChange={(e) => setSelectedCustomerId(Number(e.target.value))}
                             >
@@ -98,17 +98,17 @@ const BookingComponent = () => {
                                 ))}
                             </select>
                             {selectedCustomerId && (
-                                <div className="mt-2">
-                                    <p>Customer Name: {getCustomerName()}</p>
+                                <div className="mt-2 text-blue-600 font-medium">
+                                    Customer Name: {getCustomerName()}
                                 </div>
                             )}
                         </div>
 
-                        <div>
-                            <label className="block text-sm font-medium mb-1">Event Date</label>
+                        <div className="flex flex-col">
+                            <label className="text-black font-bold text-sm mb-1">Event Date</label>
                             <input
                                 type="date"
-                                className="w-full p-2 border rounded"
+                                className="p-2 bg-gray-200 rounded-lg shadow-sm focus:outline-none"
                                 value={eventDate}
                                 onChange={(e) => setEventDate(e.target.value)}
                             />
@@ -116,27 +116,27 @@ const BookingComponent = () => {
                     </div>
 
                     <div className="space-y-4">
-                        <div>
-                            <label className="block text-sm font-medium mb-1">Package</label>
+                        <div className="flex flex-col">
+                            <label className="text-black font-bold text-sm mb-1">Package</label>
                             <select
-                                className="w-full p-2 border rounded"
+                                className="p-2 bg-gray-200 rounded-lg shadow-sm focus:outline-none"
                                 value={selectedPackageId}
                                 onChange={(e) => setSelectedPackageId(Number(e.target.value))}
                             >
                                 <option value="">Select Package</option>
                                 {packages.map((pkg: EventPackages) => (
                                     <option key={pkg.PackageId} value={pkg.PackageId}>
-                                        {pkg.Name} - ${pkg.Price}
+                                        {pkg.Name} - LKR {pkg.Price}
                                     </option>
                                 ))}
                             </select>
                         </div>
 
-                        <div>
-                            <label className="block text-sm font-medium mb-1">Advance Payment</label>
+                        <div className="flex flex-col">
+                            <label className="text-black font-bold text-sm mb-1">Advance Payment</label>
                             <input
                                 type="number"
-                                className="w-full p-2 border rounded"
+                                className="p-2 bg-gray-200 rounded-lg shadow-sm focus:outline-none"
                                 value={advance}
                                 onChange={(e) => setAdvance(Number(e.target.value))}
                             />
@@ -144,7 +144,7 @@ const BookingComponent = () => {
 
                         <button
                             onClick={handleAddToCart}
-                            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow-md w-full mt-2"
                         >
                             Add to Cart
                         </button>
@@ -152,26 +152,28 @@ const BookingComponent = () => {
                 </div>
 
                 <div className="mb-6">
-                    <h3 className="text-lg font-semibold mb-2">Selected Packages</h3>
+                    <h3 className="text-lg font-semibold mb-4 text-blue-800">Selected Packages</h3>
                     {cart.length === 0 ? (
-                        <p className="text-gray-500">No packages selected</p>
+                        <p className="text-gray-500 p-4 bg-blue-50 rounded-lg">No packages selected</p>
                     ) : (
                         <div className="space-y-2">
                             {cart.map((item, index) => (
-                                <div key={index} className="flex justify-between items-center bg-gray-50 p-3 rounded">
-                                    <div>
-                                        <span className="font-medium">
+                                <div key={index} className="flex justify-between items-center bg-blue-100 p-4 rounded-lg hover:bg-blue-200 transition-colors">
+                                    <div className="flex-1">
+                                        <span className="font-medium text-blue-800">
                                             {getPackageDetails(item.PackageId)?.Name}
                                         </span>
-                                        <span className="ml-4">Price: LKR {item.Price}</span>
-                                        <span className="ml-4">Advance: LKR {item.Advance}</span>
-                                        <span className="ml-4">Total: LKR {item.Price - item.Advance}</span>
+                                        <div className="grid grid-cols-3 gap-4 mt-2">
+                                            <span>Price: LKR {item.Price}</span>
+                                            <span>Advance: LKR {item.Advance}</span>
+                                            <span>Total: LKR {item.Price - item.Advance}</span>
+                                        </div>
                                     </div>
                                     <button
                                         onClick={() => setCart(cart.filter((_, i) => i !== index))}
-                                        className="text-red-500 hover:text-red-700"
+                                        className="text-red-500 hover:text-red-700 flex items-center gap-1"
                                     >
-                                        Remove
+                                        <Trash2 size={16} /> Remove
                                     </button>
                                 </div>
                             ))}
@@ -179,13 +181,13 @@ const BookingComponent = () => {
                     )}
                 </div>
 
-                <div className="flex justify-between items-center">
-                    <div className="text-xl font-bold">
+                <div className="flex justify-between items-center mt-8 border-t pt-4">
+                    <div className="text-xl font-bold text-blue-800">
                         Total Price: LKR {totalPrice.toFixed(2)}
                     </div>
                     <button
                         onClick={handleSubmit}
-                        className="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600"
+                        className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md flex items-center gap-2"
                     >
                         Confirm Booking
                     </button>
