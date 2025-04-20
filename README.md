@@ -1,50 +1,87 @@
-# React + TypeScript + Vite
+# Studio Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+The *Studio Management System* is a web application designed to manage event bookings and rental items efficiently. Built using modern technologies, the system provides a user-friendly interface with real-time updates, ensuring a seamless experience for both customers and administrators.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- 📅 *Event Booking*: Users can browse and book event packages.
+- 🎥 *Item Rental*: Customers can rent studio-related items.
+- 🔄 *Real-Time Updates*: Live data updates for better user experience.
+- 🎨 *User-Friendly Interface*: Built with responsive and intuitive design.
+- 🔒 *Secure Authentication*: User login and access control.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Technologies Used
+- 🖥 *Frontend*: React, Redux, TypeScript, Tailwind CSS
+- ⚙ *Backend*: Node.js, Express.js
+- 🗄 *Database*: MySQL
+- 🏗 *State Management*: Redux Toolkit
+- 🎨 *Styling*: Tailwind CSS
+- 📝 *Version Control*: Git & GitHub
 
-## Expanding the ESLint configuration
+## 📥 Installation & Setup
+### Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Steps
+1. 📂 Clone the repository:
+   sh
+   git clone https://github.com/CHAMUD12/Studio-Management-React-Ts.git
+   cd studio-management-system
 
-- Configure the top-level `parserOptions` property like this:
+2. 📦 Install dependencies:
+   sh
+   npm install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. ▶ Start the development server:
+   sh
+   npm run dev
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. 🌐 Open the application in your browser at http://localhost:3000
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 📡 API Endpoints
+| ⚡ Method | 🔗 Endpoint               | 📌 Description           |
+|--------|------------------------|-----------------------|
+| GET    | /api/events            | Get all events       |
+| POST   | /api/events/book       | Book an event        |
+| GET    | /api/rentals           | Get rental items     |
+| POST   | /api/rentals/rent      | Rent an item         |
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📁 Project Structure
+
+<pre>
+📦 studio-management-system
+┣ 📂 React Frontend
+┃ ┣ 📂 src
+┃ ┃ ┣ 📂 components
+┃ ┃ ┣ 📂 pages
+┃ ┃ ┣ 📂 reducers
+┃ ┃ ┣ 📂 store
+┃ ┃ ┣ 📜 App.tsx
+┃ ┃ ┣ 📜 App.css
+┃ ┃ ┣ 📜 main.tsx
+┃ ┣ 📜 package.json
+┣ 📂 server (Node.js Backend)
+┃ 📜 README.md
+</pre>
+
+## 🔗 Backend Repository
+The backend of this project is available separately and built with Node.js, Express, TypeScript, and Prisma ORM.
+
+👉 [Studio-Management-Node-Express](https://github.com/CHAMUD12/Studio-Management-Node-Express.git)
+
+## 🤝 Contributing
+Feel free to fork this repository and make contributions. To contribute:
+1. 🍴 Fork the repository.
+2. 🌿 Create a new branch: git checkout -b feature-branch
+3. 💾 Commit your changes: git commit -m "Added new feature"
+4. 🚀 Push to the branch: git push origin feature-branch
+5. 🔄 Open a pull request.
+
+## 📜 License
+This project is licensed under the MIT License.
+[MIT](https://github.com/CHAMUD12/Studio-Management-React-Ts/blob/master/LICENSE.txt) License
+
+---
+*👤 Author:* [Chamud Shakeen](https://github.com/CHAMUD12)
